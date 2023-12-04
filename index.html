@@ -1,89 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programa de Processamento de Horas</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <style>
-        .progress {
-            display: none;
-        }
-    </style>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Programa de Processamento de Horas</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    </head>
+    <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="index.html">Home</a>
-          <a class="navbar-brand" href="sobre.html">Sobre</a>
-        </div>
-    </nav>
-
-    <div class="container mt-5">
-        <h1 class="text-center">Programa de Processamento de Horas</h1>
-        <p>Este é um programa projetado para processar e formatar dados de um arquivo Excel contendo registros de horas.</p>
-
-        <div class="mt-4">
-            <div class="input-group">
-                <input type="file" id="file-input" class="form-control">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Home</a>
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="sobre.html">Sobre</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </nav>
+
+        <div class="container mt-5">
+            <h1 class="text-center">Programa de Processamento de Horas</h1>
+            <p>Este é um programa projetado para processar e formatar dados de
+                um arquivo Excel contendo registros de horas.</p>
+
+            <div class="mt-4">
+                <div class="input-group">
+                    <input type="file" id="file-input" class="form-control">
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <button id="process-button" class="btn btn-primary">Processar</button>
+            </div>
+
+            <div class="progress mt-4">
+                <div
+                    class="progress-bar progress-bar-striped progress-bar-animated"
+                    role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+            <div id="error-container" class="error-message"></div>
+            <div id="success-container" class="success-message"></div>
+
         </div>
 
-        <div class="mt-4">
-            <button id="process-button" class="btn btn-primary">Processar</button>
-        </div>
-
-        <div class="progress mt-4">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
-    <script src="script.js"></script>
-    <script>
-        $(document).ready(function () {
-            const fileInput = document.getElementById("file-input");
-            const processButton = document.getElementById("process-button");
-            const progressBar = document.querySelector(".progress-bar");
-            const progress = document.querySelector(".progress");
-
-            processButton.addEventListener("click", function () {
-                const file = fileInput.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function (e) {
-                        const data = new Uint8Array(e.target.result);
-                        const workbook = XLSX.read(data, { type: "array" });
-                        const worksheet = workbook.Sheets[workbook.SheetNames[0]];
-                        const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
-
-                        // Processar e formatar dados aqui...
-
-                        console.log("Arquivo processado com sucesso!");
-                    };
-                    reader.readAsArrayBuffer(file);
-
-                    // Exibir barra de progresso durante o upload
-                    progress.style.display = "block";
-                    let progressValue = 0;
-                    const interval = setInterval(function () {
-                        progressValue += 10;
-                        if (progressValue <= 100) {
-                            progressBar.style.width = progressValue + "%";
-                        } else {
-                            clearInterval(interval);
-                            progress.style.display = "none";
-                            progressBar.style.width = "0%";
-                        }
-                    }, 500);
-                } else {
-                    console.log("Nenhum arquivo selecionado.");
-                }
-            });
-        });
-    </script>
-</body>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+        <script src="script.js"></script>
+    </body>
 </html>

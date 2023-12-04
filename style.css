@@ -1,5 +1,5 @@
 body {
-    background-color: #f8f9fa;
+    background-color: #0c7ceb;
 }
 .container {
     max-width: 600px;
@@ -12,6 +12,18 @@ input[type="file"] {
     cursor: pointer;
 }
 #process-button {
-    display: block;
+    display: inline;
     margin: 0 auto;
+}
+
+.progress {
+    display: inline;
+}
+
+.error-message {
+    color: red;
+}
+
+.success-message {
+    color: green;
 }
