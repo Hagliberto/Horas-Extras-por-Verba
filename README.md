@@ -1,12 +1,12 @@
 # Programa de Processamento de Horas
 
-Este é um programa projetado para processar e formatar dados de um arquivo Excel contendo registros de horas. Ele permite selecionar um arquivo Excel, realizar o processamento dos dados e gerar um novo arquivo Excel formatado corretamente, com planilhas separadas para cada dado da segunda coluna.
+Este é um programa projetado para processar e formatar dados de um arquivo Excel contendo registros de horas. Ele permite selecionar um arquivo Excel, realizar o processamento dos dados e gerar um novo arquivo Excel formatado corretamente, com planilhas separadas para cada Verba.
 
 ## Funcionalidades
 
 - Permite ao usuário selecionar um arquivo Excel contendo registros de horas.
 - Realiza o processamento dos dados, aplicando formatação e regras específicas.
-- Gera um novo arquivo Excel com os dados processados e formatados corretamente, contendo planilhas separadas para cada dado da segunda coluna.
+- Gera um novo arquivo Excel com os dados processados e formatados corretamente, contendo planilhas separadas para cada Verba.
 
 ## Utilização
 
@@ -24,7 +24,7 @@ Este é um programa projetado para processar e formatar dados de um arquivo Exce
    - Criar um novo arquivo Excel com os dados processados e formatados corretamente, contendo planilhas separadas.
    - Iniciar o download do novo arquivo Excel.
 7. Aguarde até que o download seja concluído.
-8. O arquivo Excel processado e formatado será salvo com o nome "Horas_Formatadas.xlsx".
+8. O arquivo Excel processado e formatado será salvo com o nome "Verba_NumeroDaVerba.xlsx".
 9. Verifique a pasta de downloads em seu computador para encontrar o arquivo gerado.
 
 ## Requisitos
@@ -37,7 +37,7 @@ O programa utiliza a biblioteca `xlsx.min.js` para realizar a leitura, escrita e
 
 ## Considerações Finais
 
-O programa de processamento de horas foi desenvolvido para facilitar a formatação correta dos dados de um arquivo Excel, tornando mais eficiente o trabalho de processamento manual. Certifique-se de seguir as instruções corretamente e verificar os arquivos gerados para garantir que os dados estejam formatados de acordo com as regras desejadas, com planilhas separadas para cada dado da segunda coluna.
+O programa de processamento de horas foi desenvolvido para facilitar a formatação correta dos dados de um arquivo Excel, tornando mais eficiente o trabalho de processamento manual. Certifique-se de seguir as instruções corretamente e verificar os arquivos gerados para garantir que os dados estejam formatados de acordo com as regras desejadas, com planilhas separadas para cada verba.
 
 Caso tenha algum problema ou dúvida durante a utilização do programa, verifique se o arquivo Excel selecionado está no formato esperado e entre em contato com o suporte técnico para obter assistência adicional.
 
