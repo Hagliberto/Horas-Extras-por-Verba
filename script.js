@@ -30,9 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 groupedData[value] = [];
               }
               if (typeof row[2] === "number") {
-                row[2] = row[2].toFixed(2).replace(".", ",");
+                row[2] = row[2].toFixed(2).replace(",", ".");
               } else if (typeof row[2] === "string") {
-                row[2] = row[2].replace(".", ",");
+                row[2] = row[2].replace(",", ".");
               }
               row[0] = ("000000" + row[0]).slice(-6);
               groupedData[value].push(row);
